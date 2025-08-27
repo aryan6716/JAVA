@@ -1,0 +1,21 @@
+package bitManipulataion;
+import java.util.*;
+public class fast_exponentiation {
+
+    public static void main(String args[]){
+         Scanner sc = new Scanner(System.in);
+         int base = sc.nextInt();
+         int power = sc.nextInt();
+         int ans = 1;
+         while(power>0){
+            if((power & 1)!=0){
+                ans *= base;
+            }
+            base *= base;
+            power = power>>1;
+         }
+         sc.close();
+    System.out.print(ans);
+    }  
+}
+
