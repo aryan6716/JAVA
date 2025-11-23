@@ -1,0 +1,38 @@
+| Keyword / Method     |   Type**    |   When Used**        |  Purpose / Meaning                                                                              | Example**                                    |
+| -------------------- | ----------- | ---------------      | --------------------------------------------------------------------------------------------    | -------------------------------------------- |
+|  final               | Keyword     | Compile-time         | Used to make variable constant, method non-overridable , or class non-inheritable (cant extend) | final int x = 10;  final class A { }.        |
+|  finally             | Block       | Runtime              | Used in exception handling  — always executes after try / catch                                 | try { ... } finally { ... }                  |
+|  finalize()          | Method      | Runtime              | Called by Garbage Collector before destroying an object with no reference, used for cleanup     | protected void finalize() { ... }            |
+
+-------------------------------------------------------------------------------------------- 
+
+final → to stop changes ✋
+finally → to always execute cleanup 🧹
+finalize() → to do last cleanup before object death ⚰️
+
+-------------------------------------------------------------------------------------------- 
+
+final int x = 10;           // final → cannot change
+try {
+    int a = 10 / 0;
+} finally {
+    System.out.print("finally block always runs");
+}
+public void finalize() {
+    System.out.print("cleanup before destruction");
+}
+
+-------------------------------------------------------------------------------------------- 
+
+First, final is a keyword. It’s used to restrict something.
+If you make a variable final, its value can’t be changed.
+If you make a method final, it can’t be overridden.
+And if you make a class final, it can’t be inherited.
+
+Second, finally is a block used in exception handling.
+It always executes, whether an exception occurs or not — usually for cleanup code, like closing files or database connections.
+
+Third, finalize() is a method called by the Garbage Collector before an object is destroyed, to perform last cleanup tasks.
+It’s like the object’s final goodbye before it’s removed from memory.
+
+-------------------------------------------------------------------------------------------- 

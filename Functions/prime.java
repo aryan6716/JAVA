@@ -8,12 +8,7 @@ public class prime {
                 c++;
             }
         }
-        if (c==0){
-            System.out.print("prime");
-        } 
-        else{
-            System.out.print("not prime");
-        }  
+            System.out.print(c==0 ? "prime" : "not prime");
      }
     public static void main(String args[]){
         Scanner sc = new Scanner(System.in);
@@ -22,3 +17,4 @@ public class prime {
         sc.close();
     }
 }
+

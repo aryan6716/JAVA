@@ -1,0 +1,55 @@
+| Basis                      | throw                                          | throws                                                        |
+| -------------------------- | ---------------------------------------------- | ------------------------------------------------------------- |
+| Type                       | Keyword                                        | Keyword                                                       |
+| Use                        | Used to throw an exception manually.           | Used to declare exceptions that a method might throw.         |
+| Place of use               | Inside a method or block.                      | In method signature.                                          |
+| Number of exceptions       | Can throw only one exception at a time.        | Can declare multiple exceptions, separated by commas.         |
+| Who throws it?             | Programmer explicitly.                         | Method declares that it may throw exceptions.                 |
+| Example exception type     | throw new ArithmeticException("Error");        | void readFile() throws IOException { ... }                    |
+| Compile-time check         | Used with both checked & unchecked exceptions. | Used mainly for checked exceptions                            |
+
+throw → actually throws the exception.
+throws → just declares it might be thrown.
+
+🎙️ Interview Answer:  In Java, throw and throws are both used for exception handling, but they’re different.
+throw is used inside a method to manually throw an exception — for example:  throw new ArithmeticException("Error");
+throws is used in the method declaration to declare that the method might throw an exception — for example:   void readFile() throws IOException { ... }
+
+
+
+
+public class ThrowExample {
+    public static void main(String[] args) {
+        int age = 15;
+        if (age < 18) {
+            throw new ArithmeticException("Not eligible to vote");
+        } else {
+            System.out.print("Eligible to vote");
+        }
+    }
+}
+
+
+
+public class ThrowsExample {
+    public static void main(String[] args) throws InterruptedException {
+        for (int i = 0; i < 10; i++) {
+            System.out.print(i + " ");
+            Thread.sleep(1000); // 1000ms = 1s
+        }
+    }
+}
+
+
+
+public static void div(int a,int b){
+        if(b==0){
+            throw new ArithmeticException("manual exception");
+        }else{
+            System.out.print("a + b = " + ( a + b ));
+        }
+   }
+    public static void main(String[] args) {
+        div(2 , 3);
+    }
+

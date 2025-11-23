@@ -34,7 +34,7 @@ All uppercase	                                            "hello".toUpperCase() 
 Remove leading/trailing spaces	                            " hi ".trim() → "hi"
 replace(char old, char new)	Replace chars	                "hello".replace('l', 'x') → "hexxo"
 replace(CharSequence, CharSequence)	Replace substrings	    "hi hi".replace("hi","hey") → "hey hey"
-emoves leading whitespace only	                            " hi".stripLeading() → "hi"
+removes leading whitespace only	                            " hi".stripLeading() → "hi"
 Removes trailing whitespace only	                        "hi ".stripTrailing() → "hi"
 Repeats the string	                                        "ab".repeat(3) → "ababab"
 

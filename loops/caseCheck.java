@@ -1,7 +1,7 @@
-package JAVA.questions;
+package loops;
 import java.util.Scanner;
 
-public class aaaa1 {
+public class caseCheck {
     public static void main(String[] args) {
         System.out.println("enter :: ");
      Scanner sc = new Scanner(System.in);

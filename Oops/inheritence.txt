@@ -1,0 +1,164 @@
+public class simple_inheritence {
+    public static void main(String[] args) {
+        aryan r = new aryan();
+        r.input();
+        r.display();
+    }
+}
+class student {
+    String name;
+    int roll,marks;
+    void input(){
+        System.out.println("enter details: ");
+    }
+}
+class aryan extends student{
+    void display(){
+        roll=18; name="aryan"; marks=95;
+        System.out.println(name+" "+roll+" "+marks);
+    }
+}
+
+
+
+
+
+public class multiLevel_Inheritence {
+    public static void main(String args[]) {
+        dog d = new dog();
+        d.eat(); // this will internally print "yes"
+        d.legs = 4;
+        System.out.print("\n" + d.legs);
+    }
+}
+class animal {// base class or parent class
+    String color;;
+    void eat() {
+        System.out.print("yes");
+    }
+    void breathe() {
+        System.out.print("yes");
+    }
+}
+class mammals extends animal {
+    int legs;
+}
+class dog extends mammals {
+    String breed;
+}
+
+
+
+
+public class multiinheritence {
+    public static void main(String[] args) {
+        C c = new C();
+        c.mul(); c.rem();
+    }
+}
+class A { // super
+    int a, b, c;
+    void add() {
+        a = 10;
+        b = 20;
+        c = a + b;
+        System.out.println("sum: " + c);
+    }
+    void sub() {
+        a = 10;
+        b = 20;
+        c = a + b;
+        System.out.println("sub: " + c);
+    }
+}
+class B extends A { // sub 1
+    void mul() {
+        a = 10;
+        b = 20;
+        c = a * b;
+        System.out.println("mul: " + c);
+    }
+    void div() {
+        a = 10;
+        b = 20;
+        c = a / b;
+        System.out.println("div: " + c);
+    }
+}
+class C extends B { // sub 2
+    void rem() {
+        a = 10;
+        b = 20;
+        c = a % b;
+        System.out.println("rem: " + c);
+    }
+}
+
+
+
+
+
+public class super_keyword {
+    public static void main(String[] args) {
+        B b = new B();
+        b.show();
+    }
+}
+class A {
+    int a=10;
+}
+class B extends A{
+    int a=100;
+    void show(){
+        System.out.println("a is: "+a);
+        System.out.println("a is: " + super.a);
+    }
+}
+
+
+
+
+public class super_keyword {
+    public static void main(String[] args) {
+        B b = new B();
+        b.show();
+    }
+}
+class A { 
+    void show(){
+        System.out.println("super ");
+    }
+}
+class B extends A {
+    void show() {
+        super.show();//this will call method of super class
+        System.out.println("sub ");
+    }
+}
+output:
+super 
+sub 
+
+
+
+
+
+public class super_keyword {
+    public static void main(String[] args) {
+        B b = new B(); //auto call constructor of super class
+    }
+}
+class A { 
+    A(){
+        System.out.println("super ");
+    }
+}
+class B extends A {
+    B() {
+        //super(); this is present by default in java thats why constructor of super class
+        System.out.println("sub ");
+    }
+}
+output:
+super 
+sub 

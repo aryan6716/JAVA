@@ -1,0 +1,64 @@
+               Interface in JDK 1.8 (Java 8)
+
+
+| Feature                         | Before Java 8 | After Java 8 |
+| ------------------------------- | ------------- | ------------ |
+| Abstract methods                | ✅             | ✅            |
+| Variables (public static final) | ✅             | ✅            |
+| Default methods                 | ❌             | ✅            |
+| Static methods                  | ❌             | ✅            |
+
+
+🧩 Q1. What new things came in Interface from Java 8?
+➡️ Default methods and Static methods
+
+🧩 Q2. Why were default methods introduced?
+➡️ To add new methods in interface without breaking old classes 
+
+🧩 Q3. What is a default method?
+➡️ A method inside interface with body, written using default keyword
+📝 Example:
+default void show() {
+   System.out.println("Default implementation");
+}
+
+🧩 Q4. Can we override a default method?
+➡️ ✅ Yes, class can override default method.
+
+🧩 Q5. What is a static method in interface?
+➡️ A method with body and static keyword — belongs to interface, not object.
+they introduced because they require no obj creation  
+static void info() {
+   System.out.println("Static method in interface");
+}
+
+🧩 Q6. How do we call a static method of an interface?
+➡️ By interface name, not object.
+Example: car.fuelType();
+
+🧩 Q7. Can we override static methods?
+➡️ ❌ No, static methods cannot be overridden
+
+🧩 Q8. Can we make object of interface?
+➡️ ❌ No, interface cannot be instantiated
+
+🧩 Q10. What are the 3 types of methods allowed in interface (after Java 8)?
+➡️ 1️⃣ Abstract.   ➡️ 2️⃣ Default.   ➡️ 3️⃣ Static
+
+🧩 Q12. Can interface have constructors?
+➡️ ❌ No, because interface cannot have objects.
+
+| Type     | Keyword | Body | Can Override? |
+| -------- | ------- | ---- | ------------- |
+| Abstract | none    | ❌    | ✅             |
+| Default  | default | ✅    | ✅             |
+| Static   | static  | ✅    | ❌             |
+
+
+*******************
+| Version     | New Feature                       | What it Allows              | Example                                          |
+| ----------- | --------------------------------- | --------------------------- | ------------------------------------------------ |
+| **JDK 1.7** | Only abstract methods & constants | No method body              | `void show();`                                   |
+| **JDK 1.8** | Default + Static methods          | Methods with body           | `default void show(){}` / `static void info(){}` |
+| **JDK 1.9** | Private methods                   | Code reuse inside interface | `private void helper(){}`                        |
+********************  

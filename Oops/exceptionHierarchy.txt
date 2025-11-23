@@ -1,0 +1,63 @@
+Object
+ └── Throwable
+      ├── Exception
+      │     ├── IOException (checked Exception)
+      │     ├── SQLException(checked Exception)
+      │     ├── ClassNotFoundException(checked Exception)
+      │     └── RuntimeException (unchecked Exception)
+      │         
+      └── Error (unchecked Exception)
+            ├── OutOfMemoryError
+            ├── StackOverflowError
+            └── VirtualMachineError
+            ├── IoError
+
+---------------------------------------------------------------------------------------
+RuntimeException
+ ├── ArithmeticException
+ ├── NullPointerException
+ ├── ArrayIndexOutOfBoundsException
+ ├── StringIndexOutOfBoundsException
+ ├── NumberFormatException
+ ├── IllegalArgumentException
+ ├── ClassCastException
+ ├── IllegalStateException
+ └── InputMismatchException
+
+| **Exception Name**                  | **When It Occurs (Meaning)**                                    | **Example Code**                                                             |
+| ----------------------------------- | --------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| **ArithmeticException**             | When illegal arithmetic operation occurs (like divide by zero). | `int a = 10 / 0;`                                                            |
+| **NullPointerException**            | When you use an object reference that is `null`.                | `String s = null; s.length();`                                               |
+| **ArrayIndexOutOfBoundsException**  | Accessing array element with invalid index.                     | `int[] arr = new int[3]; arr[5] = 10;`                                       |
+| **StringIndexOutOfBoundsException** | Accessing a string index outside its range.                     | `"Java".charAt(10);`                                                         |
+| **NumberFormatException**           | Converting invalid string to number.                            | `int n = Integer.parseInt("abc");`                                           |
+| **ClassCastException**              | Casting one type to another incompatible type.                  | `Object o = new Integer(10); String s = (String) o;`                         |
+| **IllegalArgumentException**        | Invalid argument passed to a method.                            | `Thread.sleep(-100);`                                                        |
+| **IllegalStateException**           | Method called at wrong time or state.                           | `Iterator it = list.iterator(); it.remove();` *(without next())*             |
+| **InputMismatchException**          | Wrong input type entered using `Scanner`.                       | `Scanner sc = new Scanner(System.in); int x = sc.nextInt(); // enter string` |
+| **IndexOutOfBoundsException**       | General class for out-of-range index in lists/arrays.           | `List<Integer> list = new ArrayList<>(); list.get(5);`                       |
+
+---------------------------------------------------------------------------------------
+
+| **Basis**                       | **Checked Exception**                                                            | **Unchecked Exception**                                                                                  |
+| ------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+|   Definition                    | Exceptions that are checked at compile-time                                      | Exceptions that are checked at runtime. taken care by JVM                                                              |
+|   When Detected                 | Detected by the compiler during compilation.                                     | Detected while the program is running.                                                                   |
+|   Handling Requirement**        | Must be either handled using `try-catch` or declared using `throws`.             | Not mandatory   to handle or declare.                                                                  |
+|   Subclass of                   | `Exception` (but not `RuntimeException`).                                        | `RuntimeException` and its subclasses.                                                                   |
+|   Examples                      | `IOException`, `SQLException`, `FileNotFoundException`, `ClassNotFoundException` | `NullPointerException`, `ArithmeticException`, `ArrayIndexOutOfBoundsException`, `NumberFormatException` |
+|   Programmer’s Responsibility** | Programmer must handle or declare these exceptions.                              | Programmer can handle them optionally.                                                                   |
+|   Occurs due to                 | External factors (I/O, database, network issues).                                | Programming errors or logic mistakes.                                                                    |
+
+checked exceptions are commonly occur exceptions so compiler takes care very much compiler not handle it just give the warning
+unchecked exceptions are rarely occur  exceptions so compiler not takes care very much like dividing number by zero here program compile successfully but give exception 
+
+🎯 Real-life Example (Viva Style Analogy)
+
+Checked Exception:
+Like your mom asks you before leaving home, “Did you take your admit card?” 🪪
+→ You check in advance — so no problem later. (Compiler checks at compile-time)
+
+Unchecked Exception:
+Mom didn’t ask, and you realize in the exam hall that you forgot your admit card 😱
+→ Problem occurs at runtime. (Happens only when program runs)

@@ -1,0 +1,65 @@
+
+ try {
+    // Code that might throw an exception
+}
+catch (ExceptionType e) {
+    // Code to handle the exception
+}
+finally {
+    Executes always, no matter if an exception occurs or not
+
+    When does finally not execute? When JVM exits using System.exit(0) or power failure occurs
+    Can there be multiple finally blocks? ❌ No, only one per try.
+    It is mainly used for cleanup operations (like closing files or releasing memory).
+}
+
+
+
+| Case                            | Exception | Caught? | `finally` Executes? | Program Continues?    
+| ------------------------------- | --------- | ------- | ------------------- | ------------------    
+| 1. No Exception                 | ❌         | –       | ✅                  | ✅                   
+| 2. Exception + Caught           | ✅         | ✅       | ✅                  | ✅                  
+| 3. Exception + Not Caught       | ✅         | ❌       | ✅                  | ❌                  
+| 4. try + finally (no exception) | ❌         | –       | ✅                   | ✅                    
+| 5. try + finally (exception)    | ✅         | ❌       | ✅                  | ❌                  
+| 6. `System.exit(0)`             | –         | –       | ❌                   | ❌                    
+
+
+
+| **Question**                               | **Answer (Short & Clear)**                                  |
+| ------------------------------------------ | ----------------------------------------------------------- |
+| What is the purpose of `try` block?        | To place code that may throw an exception.                  |
+| What is `catch` block used for?            | To handle the exception gracefully.                         |
+| Is `finally` block mandatory?              | ❌ No, it’s optional.                                        |
+| When does `finally` block execute?         | Always — whether exception occurs or not.                   |
+| When will `finally` not execute?           | If we use `System.exit(0)` or power failure occurs.         |
+| Can we use `try` without `catch`?          | ✅ Yes, but only if we use `finally`.                        |
+| Can we have multiple `catch` blocks?       | ✅ Yes, to handle different exceptions.                      |
+| Can we have multiple `finally` blocks?     | ❌ No, only one per `try`.                                   |
+| What happens if no exception occurs?       | `catch` is skipped, `finally` runs.                         |
+| What is the use of `finally` in real life? | To close files, database connections, or release resources. |
+
+
+
+public class MultipleCatchExample {
+    public static void main(String[] args) {
+        try {
+            int a = 10 / 0;  // ArithmeticException
+            int arr[] = {1, 2, 3};
+            System.out.println(arr[5]);  // ArrayIndexOutOfBoundsException
+        } 
+        catch (ArithmeticException e) {
+            System.out.println("Arithmetic Exception handled");
+        } 
+        catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Array Index Out of Bounds Exception handled");
+        } 
+        catch (Exception e) { 
+            System.out.println("General Exception handled");
+        }
+        System.out.println("Program continues...");
+    }
+}
+
+✅ Explanation:
+Exception → is the parent class of all exceptions in Java. It’s a subclass of Throwable. catch all types of exceptions. Not recommended — use specific exceptions for clarity.

@@ -18,8 +18,6 @@ public class product {
 
 
 
-
-
 // package Functions;
 // public class product1 {
 //     public static int multiply(int num1 , int num2){

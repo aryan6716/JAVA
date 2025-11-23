@@ -14,7 +14,7 @@ class Pen{   //class of pen
     private String colour;
     private int tip;
 
-    String getColour(){    //getter
+    String getColour(){    //get colour
         return this.colour;
     }
  

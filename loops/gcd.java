@@ -1,9 +1,9 @@
-package JAVA.questions;
+package loops;
 import java.util.Scanner;
-public class q2 {
+public class gcd {
      public static void GCD(int num1, int num2) {
         int gcd=1;
-        int smaller = (num1<num2) ? num1 : num2 ;
+        int smaller = Math.min(num1, num2) ;
         for(int i=smaller;i>=1;i--){
             if(num1%i==0 && num2%i==0) {
                 gcd=i;

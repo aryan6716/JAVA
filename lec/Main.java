@@ -1,4 +1,4 @@
-// package lec;
+package lec;
 
 // public class maths {
 //     public static void cartesian(int arr1[] , int arr2[]){
@@ -16,5 +16,22 @@
 //         cartesian(arr1,arr2);
 //     }
 // }
+
+class Test {
+    Test() {
+        System.out.println("Constructor called");
+    }
+     void Test() {
+        System.out.println("Method called");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Test t = new Test();  //constructor call
+        t.Test(); //method call
+    }
+}
+
 
 

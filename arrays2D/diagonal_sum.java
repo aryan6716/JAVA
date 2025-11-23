@@ -20,3 +20,5 @@ public class diagonal_sum {
         System.out.print(diagonalSum(arr));
     }
 }
+
+

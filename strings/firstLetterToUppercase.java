@@ -17,7 +17,7 @@ public class firstLetterToUppercase {
                 sb.append(str.charAt(i));
             }
         }
-        ;
+        
         return sb.toString();
     }
     public static void main(String args[]){
